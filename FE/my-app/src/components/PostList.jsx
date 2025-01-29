@@ -132,7 +132,7 @@ const PostList = ({ fetchPosts, postsData }) => {
                 >
                   <Card.Img
                     variant="top"
-                    src={`${API_URL}/${post.image}`}
+                    src={post.image}
                     alt={post.title}
                     style={{ height: "400px", objectFit: "cover" }}
                   />

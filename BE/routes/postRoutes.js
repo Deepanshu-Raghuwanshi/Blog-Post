@@ -7,9 +7,9 @@ const {
   deletePost,
   updatePost,
 } = require("../controller/post.controller");
+const { upload } = require("../middleware/uploadMiddleware");
 
 const router = express.Router();
-const upload = multer({ dest: "uploads/" });
 
 router.get("/", getAllPosts);
 router.get("/user/:userId", getPostsByUser);
