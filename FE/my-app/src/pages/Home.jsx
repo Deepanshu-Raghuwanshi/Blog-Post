@@ -11,7 +11,7 @@ const Home = () => {
 
   const userName = localStorage.getItem("name");
 
-  console.log(userName, "userName");
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
   useEffect(() => {
     fetchPosts();
@@ -19,7 +19,7 @@ const Home = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/posts");
+      const response = await axios.get(`${API_URL}/api/posts`);
       setPosts(response.data);
     } catch (error) {
       console.error("Error fetching posts:", error);
